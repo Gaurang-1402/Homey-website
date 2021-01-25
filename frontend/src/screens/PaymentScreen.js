@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { savePaymentMethod } from '../actions/cartActions'
+import screen2 from "./ScreenImages/screen2.png"
 
 const PaymentScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart)
@@ -18,44 +19,25 @@ const PaymentScreen = ({ history }) => {
   const dispatch = useDispatch()
 
   const submitHandler = (e) => {
-    e.preventDefault()
-    dispatch(savePaymentMethod(paymentMethod))
+    // e.preventDefault()
+    dispatch(savePaymentMethod('Paypal'))
     history.push('/placeorder')
   }
 
   return (
-    <FormContainer>
-      <CheckoutSteps step1 step2 step3 />
-      <h1>Payment Method</h1>
-      <Form onSubmit={submitHandler}>
-        <Form.Group>
-          <Form.Label as='legend'>Select Method</Form.Label>
-          <Col>
-            <Form.Check
-              type='radio'
-              label='PayPal or Credit Card'
-              id='PayPal'
-              name='paymentMethod'
-              value='PayPal'
-              checked
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            ></Form.Check>
-            {/* <Form.Check
-              type='radio'
-              label='Stripe'
-              id='Stripe'
-              name='paymentMethod'
-              value='Stripe'
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            ></Form.Check> */}
-          </Col>
-        </Form.Group>
 
-        <Button type='submit' variant='primary'>
-          Continue
+    <div>
+    <img src={screen2}></img>
+    <FormContainer>
+
+      <Form onSubmit={submitHandler}>
+
+        <Button type='submit'         className='btn-block' variant='primary'>
+          Next Step
         </Button>
       </Form>
     </FormContainer>
+    </div>
   )
 }
 

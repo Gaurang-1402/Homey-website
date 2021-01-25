@@ -29,10 +29,10 @@ const Product = ({ product }) => {
           </Card.Text>
 
           <Card.Text as='div'>
-            <strong>From: {product.category}</strong>
+            <strong>Location: {product.category}</strong>
           </Card.Text>
 
-        <Card.Text as='h3'>${product.price}</Card.Text>
+        <Card.Text as='h3'>${product.price}/hour</Card.Text>
       </Card.Body>
     </Card>
   )

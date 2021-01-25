@@ -84,9 +84,9 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                <ListGroup.Item>Consultation fee: ${product.price}/hour</ListGroup.Item>
                 <ListGroup.Item>
-                  Description: {product.description}
+                  Experience: {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -95,18 +95,18 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <Row>
-                      <Col>Price:</Col>
+                      <Col>Consultation fee:</Col>
                       <Col>
-                        <strong>${product.price}</strong>
+                        <strong>${product.price}/hour</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
 
                   <ListGroup.Item>
                     <Row>
-                      <Col>Status:</Col>
+                      <Col>Availability:</Col>
                       <Col>
-                        {product.countInStock > 0 ? 'Available on weekdays' : 'Unavailable'}
+                        <strong>{product.countInStock > 0 ? 'Available on weekdays' : 'Unavailable'}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>

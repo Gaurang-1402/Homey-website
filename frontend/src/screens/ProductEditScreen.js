@@ -17,7 +17,7 @@ const ProductEditScreen = ({ match, history }) => {
   const [image, setImage] = useState('')
   const [brand, setBrand] = useState('')
   const [category, setCategory] = useState('')
-  const [countInStock, setCountInStock] = useState(0)
+  const [countInStock, setCountInStock] = useState(1)
   const [description, setDescription] = useState('')
   const [uploading, setUploading] = useState(false)
 
@@ -97,7 +97,7 @@ const ProductEditScreen = ({ match, history }) => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
+        <h1>Add/Edit Homeopath Details</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {loading ? (
@@ -117,10 +117,10 @@ const ProductEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Form.Group controlId='price'>
-              <Form.Label>Price</Form.Label>
+              <Form.Label>Consultation charges (per hour)</Form.Label>
               <Form.Control
                 type='number'
-                placeholder='Enter price'
+                placeholder='Enter charges'
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></Form.Control>
@@ -144,30 +144,30 @@ const ProductEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Form.Group controlId='brand'>
-              <Form.Label>Brand</Form.Label>
+              <Form.Label>Qualifications</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter brand'
+                placeholder='Enter qualifications'
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='countInStock'>
-              <Form.Label>Count In Stock</Form.Label>
+              <Form.Label>Years of experience</Form.Label>
               <Form.Control
                 type='number'
-                placeholder='Enter countInStock'
+                placeholder='Enter years of experience'
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='category'>
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Country</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter category'
+                placeholder='Enter Country'
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>

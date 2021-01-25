@@ -1,90 +1,44 @@
-import React, { useState } from 'react'
-import { Form, Button } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
-import FormContainer from '../components/FormContainer'
-import CheckoutSteps from '../components/CheckoutSteps'
-import { saveShippingAddress } from '../actions/cartActions'
-
+import React, { useState } from "react"
+import { Form, Button } from "react-bootstrap"
+import { useDispatch, useSelector } from "react-redux"
+import FormContainer from "../components/FormContainer"
+import CheckoutSteps from "../components/CheckoutSteps"
+import { saveShippingAddress } from "../actions/cartActions"
+import screen1 from "./ScreenImages/screen1.png"
+// import screen2 from "../ScreenImages/screen2.png"
+// import screen3 from "../ScreenImages/screen3.png"
 
 const ShippingScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart)
   const { shippingAddress } = cart
 
-  const [address, setAddress] = useState(shippingAddress.address)
-  const [city, setCity] = useState(shippingAddress.city)
-  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
-  const [country, setCountry] = useState(shippingAddress.country)
+  const [address, setAddress] = useState("yes")
+  const [city, setCity] = useState("yes")
+  const [postalCode, setPostalCode] = useState("yes")
+  const [country, setCountry] = useState("yes")
 
   const dispatch = useDispatch()
 
   const submitHandler = (e) => {
     e.preventDefault()
     dispatch(saveShippingAddress({ address, city, postalCode, country }))
-    history.push('/payment')
+    history.push("/payment")
   }
 
   return (
     <div>
-      <h1>Success 🎉</h1>
+      <img src={screen1}></img>
 
-    <h3>One of our representatives will connect you with the Homeopath via email to schedule a video call at a mutually available time </h3>
+      {/* <img src=></img> */}
 
-    <h5> Thank you for using Homey!</h5>
+      <FormContainer>
+        <Form onSubmit={submitHandler}>
+          <Button type='submit'         className='btn-block'f variant='primary'>
+            Next step
+          </Button>
+        </Form>
+      </FormContainer>
     </div>
-
-    // <FormContainer>
-    //   <CheckoutSteps step1 step2 />
-    //   <h1>Shipping</h1>
-    //   <Form onSubmit={submitHandler}>
-    //     <Form.Group controlId='address'>
-    //       <Form.Label>Address</Form.Label>
-    //       <Form.Control
-    //         type='text'
-    //         placeholder='Enter address'
-    //         value={address}
-    //         required
-    //         onChange={(e) => setAddress(e.target.value)}
-    //       ></Form.Control>
-    //     </Form.Group>
-
-    //     <Form.Group controlId='city'>
-    //       <Form.Label>City</Form.Label>
-    //       <Form.Control
-    //         type='text'
-    //         placeholder='Enter city'
-    //         value={city}
-    //         required
-    //         onChange={(e) => setCity(e.target.value)}
-    //       ></Form.Control>
-    //     </Form.Group>
-
-    //     <Form.Group controlId='postalCode'>
-    //       <Form.Label>Postal Code</Form.Label>
-    //       <Form.Control
-    //         type='text'
-    //         placeholder='Enter postal code'
-    //         value={postalCode}
-    //         required
-    //         onChange={(e) => setPostalCode(e.target.value)}
-    //       ></Form.Control>
-    //     </Form.Group>
-
-    //     <Form.Group controlId='country'>
-    //       <Form.Label>Country</Form.Label>
-    //       <Form.Control
-    //         type='text'
-    //         placeholder='Enter country'
-    //         value={country}
-    //         required
-    //         onChange={(e) => setCountry(e.target.value)}
-    //       ></Form.Control>
-    //     </Form.Group>
-
-    //     <Button type='submit' variant='primary'>
-    //       Continue
-    //     </Button>
-    //   </Form>
-    // </FormContainer>
   )
 }
 
