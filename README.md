@@ -1,33 +1,27 @@
-> eCommerce platform built with the MERN stack & Redux.
-
-This is the course project for my [MERN eCommerce From Scratch](https://www.udemy.com/course/mern-ecommerce) course
-
-
+> Homey: a platform to connect homeopaths with patients. Built with the MERN stack & Redux.
 
 ## Features
 
-- Full featured shopping cart
-- Product reviews and ratings
-- Top products carousel
-- Product pagination
-- Product search feature
-- User profile with orders
-- Admin product management
+- Full featured appointments section
+- Homeopath reviews and ratings
+- Appointment confirmation guide carousel
+- Pagination on homescreen for organizing homeopaths
+- Homeopath search feature
+- User profile with appointments
+- Admin Homeopaths management
 - Admin user management
-- Admin Order details page
-- Mark orders as delivered option
-- Checkout process (shipping, payment method, etc)
-- PayPal / credit card integration
-- Database seeder (products & users)
+- Admin appointments details page
+- Mark appointment as completed option
+- Checkout process (step by stepappointment confirmation)
+- Desktop as well as mobile optimized
+
 
 
 ## Usage
 
 ### ES Modules in Node
 
-We us ECMAScript Modules in the backend in this project. Be sure to have at least Node v14.6+ or you will need to add the "--experimental-modules" flag.
-
-Also, when importing a file (not a package), be sure to add .js at the end or you will get a "module not found" error
+When importing a file (not a package), be sure to add .js at the end or you will get a "module not found" error
 
 You can also install and setup Babel if you would like
 
@@ -40,7 +34,7 @@ NODE_ENV = development
 PORT = 5000
 MONGO_URI = your mongodb uri
 JWT_SECRET = 'abc123'
-PAYPAL_CLIENT_ID = your paypal client id
+PAYPAL_CLIENT_ID = your paypal client id (needed for functionality of the code)
 ```
 
 ### Install Dependencies (frontend & backend)
