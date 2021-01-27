@@ -27,12 +27,12 @@ const PaymentScreen = ({ history }) => {
   return (
 
     <div>
-    <img src={screen2}></img>
+    <img className='img-fluid' src={screen2}></img>
     <FormContainer>
 
       <Form onSubmit={submitHandler}>
 
-        <Button type='submit'         className='btn-block' variant='primary'>
+        <Button type='submit'    className='btn-block' variant='primary'>
           Next Step
         </Button>
       </Form>

@@ -65,7 +65,7 @@ const PlaceOrderScreen = ({ history }) => {
   return (
     <>
       <div>
-        <img src={screen3}></img>
+        <img className='img-fluid' src={screen3}></img>
 
         <FormContainer>
           <Button

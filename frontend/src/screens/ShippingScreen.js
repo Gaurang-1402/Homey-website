@@ -27,7 +27,7 @@ const ShippingScreen = ({ history }) => {
 
   return (
     <div>
-      <img src={screen1}></img>
+      <img className='img-fluid' src={screen1}></img>
 
       {/* <img src=></img> */}
 
