@@ -1,4 +1,4 @@
-## Homey: a platform to connect homeopaths with patients. Built with the MERN stack & Redux.
+## Homey: a platform to connect homeopaths with patients. 
 
 ## Features
 
