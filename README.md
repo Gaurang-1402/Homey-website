@@ -12,7 +12,7 @@
 - Admin user management
 - Admin appointments details page
 - Mark appointment as completed option
-- Checkout process (step by stepappointment confirmation)
+- Checkout process (step by step appointment confirmation)
 - Desktop as well as mobile optimized
 
 
